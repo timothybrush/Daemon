@@ -4,6 +4,8 @@ A personal daemon — a live, machine-readable broadcast of who you are, what yo
 
 Your daemon is a public dashboard plus a public API of yourself: your mission, current status, live activity feed, projects, predictions, offerings, and preferences — all served from one place, kept fresh automatically, and readable by both humans and AI agents.
 
+![Daemon dashboard](daemon-screenshot.png)
+
 Live example: [daemon.danielmiessler.com](https://daemon.danielmiessler.com)
 
 ## What you get
