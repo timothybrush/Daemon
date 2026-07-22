@@ -1,0 +1,21 @@
+name = "daemon"
+main = "src/worker.ts"
+compatibility_date = "2025-08-20"
+
+# Once you attach a custom domain, turn the dev URLs off:
+# workers_dev = false
+# preview_urls = false
+
+[assets]
+directory = "cms/.vitepress/dist"
+binding = "ASSETS"
+run_worker_first = ["/daemon-data.json", "/feed.json"]
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+# Create with: bunx wrangler kv namespace create FEED_KV
+# then paste the generated id here.
+[[kv_namespaces]]
+binding = "FEED_KV"
+id = "YOUR_KV_NAMESPACE_ID"

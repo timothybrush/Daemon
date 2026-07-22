@@ -1,0 +1,105 @@
+{
+  "owner_name": "Ada Example",
+  "owner_handle": "ADA",
+  "fork_url": "https://github.com/danielmiessler/Daemon",
+  "about": "I'm Ada, a software engineer and writer. I build open-source tools and write about systems thinking.",
+  "mission": "Help people build tools that make them more capable versions of themselves.",
+  "narrative": "I believe everyone should have a public daemon — a live, machine-readable broadcast of what they're doing and what they care about.",
+  "telos": [
+    "P1: Most people's public presence is static and stale",
+    "M1: Make it effortless to broadcast what you're actually doing"
+  ],
+  "current_location": "Pacific Northwest",
+  "location_default": "Pacific Northwest",
+  "location_meta": null,
+  "now": "Heads-down on a new open-source release.",
+  "now_meta": {
+    "expires": "2030-01-01T00:00:00.000Z"
+  },
+  "status": {
+    "headline": "Building in public",
+    "detail": "Shipping a new project and writing about the process.",
+    "since": "2026-01-01",
+    "expires": "2030-01-01T00:00:00.000Z",
+    "tags": [
+      "building",
+      "open-source"
+    ]
+  },
+  "offerings": [
+    {
+      "title": "Code review and architecture feedback for open-source projects",
+      "tags": [
+        "open-source",
+        "code-review"
+      ]
+    }
+  ],
+  "requesting": [
+    {
+      "title": "Collaborators for daemon-to-daemon protocol experiments",
+      "tags": [
+        "protocol",
+        "collaboration"
+      ]
+    }
+  ],
+  "feeds": [
+    {
+      "type": "rss",
+      "name": "Blog",
+      "url": "https://example.com/feed.xml",
+      "max": 8
+    },
+    {
+      "type": "rss",
+      "name": "YouTube",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=YOUR_CHANNEL_ID",
+      "max": 6
+    },
+    {
+      "type": "github",
+      "name": "GitHub",
+      "user": "your-github-username",
+      "max": 6
+    }
+  ],
+  "daemon_endpoints": {
+    "profile_json": "https://daemon.example.com/daemon-data.json",
+    "feed_json": "https://daemon.example.com/feed.json",
+    "offerings_path": "$.offerings",
+    "requesting_path": "$.requesting",
+    "status_path": "$.status",
+    "now_path": "$.now",
+    "schema": "offerings[] and requesting[] are arrays of { title, tags[] }; status is { headline, detail, since, tags[] }; now is a string. Ephemeral items may carry an ISO `expires` field and are auto-removed from the served payload once expired. feed_json is { updated, items[] } where items are { source, type, title, url, date }.",
+    "consumed_by": ""
+  },
+  "preferences": [
+    "Editor: your editor of choice",
+    "Languages: your languages"
+  ],
+  "daily_routine": [
+    "Morning walk",
+    "Deep work block",
+    "Evening reading"
+  ],
+  "favorite_books": [
+    "\"The Beginning of Infinity\" by David Deutsch"
+  ],
+  "favorite_movies": [
+    "Arrival"
+  ],
+  "favorite_podcasts": [],
+  "predictions": [
+    "Personal daemons will broadcast preferences (Almost Certain)"
+  ],
+  "projects": {
+    "technical": [
+      "YourProject — What it does and why it matters."
+    ],
+    "creative": [],
+    "personal": []
+  },
+  "last_updated": "2026-01-01T00:00:00.000Z",
+  "sync_status": {}
+}
