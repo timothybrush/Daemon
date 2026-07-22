@@ -72,7 +72,8 @@
     "status_path": "$.status",
     "now_path": "$.now",
     "schema": "offerings[] and requesting[] are arrays of { title, tags[] }; status is { headline, detail, since, tags[] }; now is a string. Ephemeral items may carry an ISO `expires` field and are auto-removed from the served payload once expired. feed_json is { updated, items[] } where items are { source, type, title, url, date }.",
-    "consumed_by": ""
+    "consumed_by": "",
+    "resume_path": "$.resume"
   },
   "preferences": [
     "Editor: your editor of choice",
@@ -101,5 +102,20 @@
     "personal": []
   },
   "last_updated": "2026-01-01T00:00:00.000Z",
-  "sync_status": {}
+  "sync_status": {},
+  "resume": [
+    {
+      "period": "2020–now",
+      "role": "Founder",
+      "org": "Example Labs",
+      "summary": "Building open-source tools in public"
+    },
+    {
+      "period": "2014–2020",
+      "role": "Senior Engineer",
+      "org": "BigCo",
+      "summary": "Distributed systems and developer tooling"
+    }
+  ],
+  "resume_link": "https://www.linkedin.com/in/your-handle"
 }

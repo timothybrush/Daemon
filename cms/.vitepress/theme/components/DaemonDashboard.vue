@@ -154,12 +154,30 @@
             </div>
           </div>
         </section>
+
+        <section v-if="daemonData.resume?.length" class="panel boot" id="resume" style="--i: 7.5">
+          <div class="panel-head">
+            <span class="panel-idx">08</span>
+            <h2 class="panel-label">Resume</h2>
+            <span class="panel-meta">{{ daemonData.resume.length }}</span>
+          </div>
+          <div class="cv-list">
+            <div v-for="(entry, i) in daemonData.resume" :key="i" class="cv-row">
+              <span class="cv-period">{{ entry.period }}</span>
+              <div class="cv-body">
+                <span class="cv-role">{{ entry.role }}<template v-if="entry.org"> · {{ entry.org }}</template></span>
+                <span v-if="entry.summary" class="cv-summary">{{ entry.summary }}</span>
+              </div>
+            </div>
+          </div>
+          <a v-if="daemonData.resume_link" class="cv-link" :href="daemonData.resume_link" target="_blank" rel="noopener">FULL RESUME ↗</a>
+        </section>
       </div>
 
       <!-- Row C -->
       <section class="panel span-4 boot" style="--i: 8">
         <div class="panel-head">
-          <span class="panel-idx">08</span>
+          <span class="panel-idx">09</span>
           <h2 class="panel-label">Preferences</h2>
           <span class="panel-meta">{{ daemonData.preferences?.length || 0 }}</span>
         </div>
@@ -170,7 +188,7 @@
 
       <section class="panel span-4 boot" style="--i: 9">
         <div class="panel-head">
-          <span class="panel-idx">09</span>
+          <span class="panel-idx">10</span>
           <h2 class="panel-label">Routine</h2>
         </div>
         <div class="line-list">
@@ -183,7 +201,7 @@
 
       <section class="panel span-4 boot" style="--i: 10">
         <div class="panel-head">
-          <span class="panel-idx">10</span>
+          <span class="panel-idx">11</span>
           <h2 class="panel-label">Books</h2>
           <span class="panel-meta">{{ daemonData.favorite_books?.length || 0 }}</span>
         </div>
@@ -195,7 +213,7 @@
       <!-- Row D -->
       <section class="panel span-4 boot" style="--i: 11">
         <div class="panel-head">
-          <span class="panel-idx">11</span>
+          <span class="panel-idx">12</span>
           <h2 class="panel-label">Movies</h2>
           <span class="panel-meta">{{ daemonData.favorite_movies?.length || 0 }}</span>
         </div>
@@ -206,7 +224,7 @@
 
       <section class="panel span-4 boot" style="--i: 12">
         <div class="panel-head">
-          <span class="panel-idx">12</span>
+          <span class="panel-idx">13</span>
           <h2 class="panel-label">Podcasts</h2>
           <span class="panel-meta">{{ daemonData.favorite_podcasts?.length || 0 }}</span>
         </div>
@@ -217,7 +235,7 @@
 
       <section class="panel span-4 boot" id="signal" style="--i: 13">
         <div class="panel-head">
-          <span class="panel-idx">13</span>
+          <span class="panel-idx">14</span>
           <h2 class="panel-label">Signal</h2>
           <span class="panel-meta">machine-readable</span>
         </div>
@@ -710,6 +728,23 @@ function extractProjectName(project: string): string {
   font-family: 'triplicate', monospace; font-size: 0.56rem; letter-spacing: 0.04em;
   color: var(--ul-text-3); background: var(--ul-bg-3); padding: 0.08rem 0.4rem; border-radius: 2px;
 }
+
+/* ═══ Resume ═══ */
+.cv-list { display: flex; flex-direction: column; gap: 0.65rem; }
+.cv-row { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.7rem; align-items: start; }
+.cv-period { font-family: 'triplicate', monospace; font-size: 0.62rem; color: var(--ul-brand-light); line-height: 1.9; white-space: nowrap; }
+.cv-body { display: flex; flex-direction: column; gap: 0.1rem; }
+.cv-role { font-size: 0.85rem; color: var(--ul-text); line-height: 1.45; }
+.cv-summary { font-size: 0.78rem; color: var(--ul-text-3); line-height: 1.45; }
+
+.cv-link {
+  display: inline-block; margin-top: 0.8rem;
+  font-family: 'triplicate', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+  color: var(--ul-brand-light); text-decoration: none;
+  border: 1px solid #0a4bc455; border-radius: 2px; padding: 0.22rem 0.6rem;
+  transition: color 0.15s ease-out, background 0.15s ease-out;
+}
+.cv-link:hover { color: var(--ul-text); background: var(--ul-brand); }
 
 /* ═══ Simple line lists ═══ */
 .line-list { display: flex; flex-direction: column; }

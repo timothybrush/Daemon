@@ -15,6 +15,7 @@ Live example: [daemon.danielmiessler.com](https://daemon.danielmiessler.com)
 - **TTL'd ephemera** — status, location, and time-bound offerings carry `expires` stamps and are stripped **at the edge** once stale; your daemon can never assert last month's plans
 - **A location safety gate** — a deterministic pre-deploy check blocks street addresses, ZIP codes, coordinates, your home-area strings, and unapproved real-time presence phrasing
 - **Machine-readable endpoints** — `/daemon-data.json` and `/feed.json`, stable and additive, for agents and daemon-to-daemon protocols
+- **Optional abridged resume** — a `resume` section (`$.resume`) with a `resume_link` pointer to the full version (LinkedIn or anywhere)
 
 ## Architecture
 
