@@ -39,9 +39,9 @@
       </div>
       <div class="ident-right">
         <p class="ident-narrative">{{ daemonData.narrative }}</p>
-        <div v-if="visibleStatus?.headline || visibleNow" class="ident-now">
+        <div v-if="heroCurrentState" class="ident-now">
           <span class="now-prompt">&gt;</span>
-          <span class="now-text">{{ visibleStatus?.headline || visibleNow }}</span>
+          <span class="now-text">{{ heroCurrentState }}</span>
           <span class="now-cursor"></span>
         </div>
       </div>
@@ -267,6 +267,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import daemonDataJson from '../../../public/daemon-data.json'
+import { selectHeroCurrentState } from '../currentState'
 
 const currentTime = ref(new Date())
 const daemonData = ref<any>(daemonDataJson)
@@ -320,8 +321,7 @@ function notExpired(item: any): boolean {
   return Number.isNaN(t) || t > currentTime.value.getTime()
 }
 
-const visibleStatus = computed(() => (daemonData.value.status && notExpired(daemonData.value.status)) ? daemonData.value.status : null)
-const visibleNow = computed(() => (daemonData.value.now && notExpired(daemonData.value.now_meta ?? {})) ? daemonData.value.now : null)
+const heroCurrentState = computed(() => selectHeroCurrentState(daemonData.value, currentTime.value.getTime()))
 const visibleOfferings = computed(() => (daemonData.value.offerings ?? []).filter(notExpired))
 const visibleRequesting = computed(() => (daemonData.value.requesting ?? []).filter(notExpired))
 
